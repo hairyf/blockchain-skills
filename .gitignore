@@ -9,3 +9,6 @@ lib-cov
 logs
 node_modules
 temp
+
+# 只忽略「点目录」下的 skills（如 .cursor/skills），根目录 skills/ 保持跟踪
+.*/skills
