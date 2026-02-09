@@ -1,42 +1,33 @@
-[submodule "sources/vue"]
-	path = sources/vue
-	url = https://github.com/vuejs/docs
-[submodule "sources/nuxt"]
-	path = sources/nuxt
-	url = https://github.com/nuxt/nuxt
-[submodule "sources/vite"]
-	path = sources/vite
-	url = https://github.com/vitejs/vite
-[submodule "sources/unocss"]
-	path = sources/unocss
-	url = https://github.com/unocss/unocss
-[submodule "vendor/slidev"]
-	path = vendor/slidev
-	url = https://github.com/slidevjs/slidev
-[submodule "vendor/vueuse"]
-	path = vendor/vueuse
-	url = https://github.com/vueuse/skills
-[submodule "vendor/vue-best-practices"]
-	path = vendor/vue-best-practices
-	url = https://github.com/hyf0/vue-skills
-[submodule "sources/tsdown"]
-	path = sources/tsdown
-	url = https://github.com/rolldown/tsdown
-[submodule "sources/vitest"]
-	path = sources/vitest
-	url = https://github.com/vitest-dev/vitest
-[submodule "sources/pnpm"]
-	path = sources/pnpm
-	url = https://github.com/pnpm/pnpm.io
-[submodule "sources/vitepress"]
-	path = sources/vitepress
-	url = https://github.com/vuejs/vitepress
-[submodule "vendor/turborepo"]
-	path = vendor/turborepo
-	url = https://github.com/vercel/turborepo
-[submodule "vendor/web-design-guidelines"]
-	path = vendor/web-design-guidelines
-	url = https://github.com/vercel-labs/agent-skills
-[submodule "sources/pinia"]
-	path = sources/pinia
-	url = https://github.com/vuejs/pinia
+[submodule "sources/solidity"]
+	path = sources/solidity
+	url = https://github.com/ethereum/solidity
+[submodule "sources/solana"]
+	path = sources/solana
+	url = https://github.com/solana-foundation/solana-com
+[submodule "sources/tron"]
+	path = sources/tron
+	url = https://github.com/tronprotocol/documentation-en
+[submodule "sources/tron-java"]
+	path = sources/tron-java
+	url = https://github.com/tronprotocol/java-tron
+[submodule "sources/ton"]
+	path = sources/ton
+	url = https://github.com/ton-org/docs
+[submodule "sources/geth"]
+	path = sources/geth
+	url = https://github.com/ethereum/go-ethereum
+[submodule "sources/reth"]
+	path = sources/reth
+	url = https://github.com/paradigmxyz/reth
+[submodule "sources/getblock"]
+	path = sources/getblock
+	url = https://github.com/GetBlock-io/getblock-docs
+[submodule "sources/thegraph"]
+	path = sources/thegraph
+	url = https://github.com/graphprotocol/docs
+[submodule "sources/subsquid"]
+	path = sources/subsquid
+	url = https://github.com/subsquid/docs
+[submodule "sources/moralis"]
+	path = sources/moralis
+	url = https://github.com/MoralisWeb3/docs
