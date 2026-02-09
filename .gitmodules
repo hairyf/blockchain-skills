@@ -31,3 +31,147 @@
 [submodule "sources/moralis"]
 	path = sources/moralis
 	url = https://github.com/MoralisWeb3/docs
+[submodule "sources/envio"]
+	path = sources/envio
+	url = https://github.com/enviodev/docs
+[submodule "sources/alchemy"]
+	path = sources/alchemy
+	url = https://github.com/alchemyplatform/alchemy-sdk-js
+[submodule "sources/helius"]
+	path = sources/helius
+	url = https://github.com/helius-labs/helius-sdk
+[submodule "sources/foundry"]
+	path = sources/foundry
+	url = https://github.com/foundry-rs/foundry
+[submodule "sources/hardhat"]
+	path = sources/hardhat
+	url = https://github.com/NomicFoundation/hardhat
+[submodule "sources/anchor"]
+	path = sources/anchor
+	url = https://github.com/coral-xyz/anchor
+[submodule "sources/viem"]
+	path = sources/viem
+	url = https://github.com/wevm/viem
+[submodule "sources/wagmi"]
+	path = sources/wagmi
+	url = https://github.com/wevm/wagmi
+[submodule "sources/ethers"]
+	path = sources/ethers
+	url = https://github.com/ethers-io/ethers.js
+[submodule "sources/openzeppelin"]
+	path = sources/openzeppelin
+	url = https://github.com/OpenZeppelin/openzeppelin-contracts
+[submodule "sources/slither"]
+	path = sources/slither
+	url = https://github.com/crytic/slither
+[submodule "sources/echidna"]
+	path = sources/echidna
+	url = https://github.com/crytic/echidna
+[submodule "sources/aderyn"]
+	path = sources/aderyn
+	url = https://github.com/Cyfrin/aderyn
+[submodule "sources/mythril"]
+	path = sources/mythril
+	url = https://github.com/ConsenSys/mythril
+[submodule "sources/halmos"]
+	path = sources/halmos
+	url = https://github.com/a16z/halmos
+[submodule "sources/circom"]
+	path = sources/circom
+	url = https://github.com/iden3/circom
+[submodule "sources/cairo"]
+	path = sources/cairo
+	url = https://github.com/starkware-libs/cairo
+[submodule "sources/snarkjs"]
+	path = sources/snarkjs
+	url = https://github.com/iden3/snarkjs
+[submodule "sources/sp1"]
+	path = sources/sp1
+	url = https://github.com/succinctlabs/sp1
+[submodule "sources/risc0"]
+	path = sources/risc0
+	url = https://github.com/risc0/risc0
+[submodule "sources/halo2"]
+	path = sources/halo2
+	url = https://github.com/zcash/halo2
+[submodule "sources/zksync-era"]
+	path = sources/zksync-era
+	url = https://github.com/matter-labs/zksync-era
+[submodule "sources/arbitrum"]
+	path = sources/arbitrum
+	url = https://github.com/OffchainLabs/nitro
+[submodule "sources/starknet"]
+	path = sources/starknet
+	url = https://github.com/starkware-libs/starknet-specs
+[submodule "sources/layerzero"]
+	path = sources/layerzero
+	url = https://github.com/LayerZero-Labs/LayerZero
+[submodule "sources/wormhole"]
+	path = sources/wormhole
+	url = https://github.com/wormhole-foundation/wormhole
+[submodule "sources/cosmos"]
+	path = sources/cosmos
+	url = https://github.com/cosmos/cosmos-sdk
+[submodule "sources/axelar"]
+	path = sources/axelar
+	url = https://github.com/axelarnetwork/axelar-core
+[submodule "sources/hyperlane"]
+	path = sources/hyperlane
+	url = https://github.com/hyperlane-xyz/hyperlane-monorepo
+[submodule "sources/eigenlayer"]
+	path = sources/eigenlayer
+	url = https://github.com/Layr-Labs/eigenlayer-contracts
+[submodule "sources/celestia"]
+	path = sources/celestia
+	url = https://github.com/celestiaorg/celestia-node
+[submodule "sources/avail"]
+	path = sources/avail
+	url = https://github.com/availproject/avail
+[submodule "sources/bitcoin"]
+	path = sources/bitcoin
+	url = https://github.com/bitcoin/bitcoin
+[submodule "sources/bitcoin-js"]
+	path = sources/bitcoin-js
+	url = https://github.com/bitcoinjs/bitcoinjs-lib
+[submodule "sources/bitcoin-rust"]
+	path = sources/bitcoin-rust
+	url = https://github.com/rust-bitcoin/rust-bitcoin
+[submodule "sources/mempool"]
+	path = sources/mempool
+	url = https://github.com/mempool/mempool
+[submodule "sources/ordinals"]
+	path = sources/ordinals
+	url = https://github.com/ordinals/ord
+[submodule "sources/stacks"]
+	path = sources/stacks
+	url = https://github.com/stacks-network/stacks-blockchain
+[submodule "sources/bitvm"]
+	path = sources/bitvm
+	url = https://github.com/BitVM/BitVM
+[submodule "sources/uniswap-v4"]
+	path = sources/uniswap-v4
+	url = https://github.com/Uniswap/v4-core
+[submodule "sources/aave-v3"]
+	path = sources/aave-v3
+	url = https://github.com/aave/aave-v3-core
+[submodule "sources/flashbots"]
+	path = sources/flashbots
+	url = https://github.com/flashbots/mev-boost
+[submodule "sources/searcher-builder"]
+	path = sources/searcher-builder
+	url = https://github.com/ethereum/builder-specs
+[submodule "sources/eips"]
+	path = sources/eips
+	url = https://github.com/ethereum/EIPs
+[submodule "sources/walletconnect"]
+	path = sources/walletconnect
+	url = https://github.com/WalletConnect/walletconnect-monorepo
+[submodule "sources/did-core"]
+	path = sources/did-core
+	url = https://github.com/w3c/did-core
+[submodule "sources/arweave"]
+	path = sources/arweave
+	url = https://github.com/ArweaveTeam/arweave
+[submodule "sources/filecoin"]
+	path = sources/filecoin
+	url = https://github.com/filecoin-project/lotus
