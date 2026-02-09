@@ -103,6 +103,15 @@ You don't need to do anything about them unless being asked.
 - **Create** `SKILL.md` index listing all skills
 - **Create** `GENERATION.md` with the source git SHA
 
+#### Parallel Mode (Multiple Sessions)
+
+Multiple sessions can generate different skills at the same time.
+
+- **One project per session**: Each session is assigned exactly one `{project}` (e.g. "this session: viem"). Do not pick a project already listed as in progress in `.bonfire/index.md`.
+- **No file overlap**: Each project writes only to `skills/{project}/` and reads only from `sources/{project}/` or `vendor/{project}/`, so there is no file conflict between sessions.
+- **Shared context**: The only shared file is `.bonfire/index.md`. When ending a session, update **only** the row for your assigned project (☐ → ☑). Do not overwrite or restructure the rest of the file.
+- **In progress**: When starting in parallel mode, note your assigned project under "In progress" in `.bonfire/index.md` (e.g. `viem (this session)`). When ending, mark that project complete and remove it from "In progress".
+
 #### Updating Generated Skills
 
 1. **Check** git diff since the SHA recorded in `GENERATION.md`:

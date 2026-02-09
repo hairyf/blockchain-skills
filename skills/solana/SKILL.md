@@ -1,0 +1,50 @@
+---
+name: solana
+description: Solana blockchain development — core concepts, clients, RPC, tokens, and payments for agent-driven tooling.
+metadata:
+  author: hairy
+  version: "2026.2.9"
+  source: Generated from https://github.com/solana-foundation/solana-com, scripts located at https://github.com/antfu/skills
+---
+
+> Skill is based on Solana documentation (solana-com), generated 2026-02-09.
+
+Concise reference for building on Solana: accounts, transactions, programs, PDAs, CPI, fees, JavaScript/Rust clients, frontend, SPL tokens, RPC, payments, and terminology.
+
+## Core References
+
+| Topic | Description | Reference |
+|-------|-------------|-----------|
+| Accounts | Account model, address, keypair, PDA | [core-accounts](references/core-accounts.md) |
+| Transactions & Instructions | Tx format, signatures, message, build & send | [core-transactions-instructions](references/core-transactions-instructions.md) |
+| Programs & PDA | Programs, PDA derivation, canonical bump | [core-programs-pda](references/core-programs-pda.md) |
+| CPI & Fees | Cross-program invocation, base/priority fees, CU | [core-cpi-fees](references/core-cpi-fees.md) |
+
+## Clients & Frontend
+
+| Topic | Description | Reference |
+|-------|-------------|-----------|
+| JavaScript/TypeScript | @solana/kit, web3.js, @solana/client, SPL | [clients-javascript](references/clients-javascript.md) |
+| Rust | solana-sdk, solana-client, keypair, RPC | [clients-rust](references/clients-rust.md) |
+| React & Next.js | @solana/react-hooks, provider, wallet | [frontend-react-nextjs](references/frontend-react-nextjs.md) |
+
+## Tokens
+
+| Topic | Description | Reference |
+|-------|-------------|-----------|
+| SPL Token Basics | Mint, token account, transfer, ATA, approve, burn | [tokens-basics](references/tokens-basics.md) |
+| Token-2022 Extensions | Metadata, transfer fees, confidential, hooks | [tokens-extensions](references/tokens-extensions.md) |
+
+## RPC & Payments
+
+| Topic | Description | Reference |
+|-------|-------------|-----------|
+| RPC HTTP & WebSocket | getAccountInfo, getBalance, subscriptions | [rpc-http-websocket](references/rpc-http-websocket.md) |
+| Payments & Solana Pay | Payment URLs, verification, send/accept | [payments-solana-pay](references/payments-solana-pay.md) |
+
+## Cookbook & Reference
+
+| Topic | Description | Reference |
+|-------|-------------|-----------|
+| Cookbook Recipes | Send SOL, keypair, balance, memo, priority fees | [cookbook-recipes](references/cookbook-recipes.md) |
+| Clusters & Terminology | Mainnet, devnet, terms, staking | [references-clusters-terminology](references/references-clusters-terminology.md) |

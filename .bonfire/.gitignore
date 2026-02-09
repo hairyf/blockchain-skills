@@ -1,3 +1,2 @@
 # .bonfire/.gitignore
-*
-!.gitignore
+# No ignores - commit all session data
