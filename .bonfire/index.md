@@ -15,7 +15,7 @@ linear: false
 
 ## Current State
 
-????**generate tron-java skill**?Type 1?? sources/tron-java ??????Skills ????????????? Agent Skills?????? `meta.ts`???? `skills/`?
+**? Session**??? **aave-v3** skill?Type 1?? `sources/aave-v3` ??? README??Output: `skills/aave-v3/`. **In progress**: aave-v3 (this session).
 
 ---
 
@@ -36,7 +36,7 @@ linear: false
 
 ## Next Session Priorities
 
-1. ?? **tron** skill????????
+1. Complete **bitcoin-js** skill (references, SKILL.md, GENERATION.md).
 
 ---
 
@@ -48,9 +48,11 @@ linear: false
 - **?????**???**?????**????? ? ?? ?????????????????????????
 - **???**?????????? project????????
 
-| Project | ???? |
-|---------|----------|
-| solana | ??? |
+| Project | Status |
+|---------|--------|
+| solana | done |
+| bitcoin | done |
+| bitcoin-js | in progress (this session) |
 
 ---
 
@@ -93,52 +95,52 @@ generate skills for <project> author hairy, use english.
 | | ethers | [x] |
 | **Security_Auditing** | | |
 | | openzeppelin | [x] |
-| | slither | ? |
-| | echidna | ? |
-| | aderyn | ? |
-| | mythril | ? |
-| | halmos | ? |
+| | slither | [ ] |
+| | echidna | [ ] |
+| | aderyn | [ ] |
+| | mythril | [ ] |
+| | halmos | [ ] |
 | **ZK_and_zkVM** | | |
-| | circom | ? |
-| | cairo | ? |
-| | snarkjs | ? |
-| | sp1 | ? |
-| | risc0 | ? |
-| | halo2 | ? |
-| | zksync-era | ? |
-| | optimism | ? |
-| | arbitrum | ? |
-| | starknet | ? |
+| | circom | [ ] |
+| | cairo | [ ] |
+| | snarkjs | [ ] |
+| | sp1 | [ ] |
+| | risc0 | [ ] |
+| | halo2 | [ ] |
+| | zksync-era | [ ] |
+| | optimism | [ ] |
+| | arbitrum | [ ] |
+| | starknet | [ ] |
 | **Interoperability** | | |
-| | layerzero | ? |
-| | wormhole | ? |
-| | cosmos | ? |
-| | axelar | ? |
-| | hyperlane | ? |
+| | layerzero | [ ] |
+| | wormhole | [ ] |
+| | cosmos | [ ] |
+| | axelar | [ ] |
+| | hyperlane | [ ] |
 | **Modular_and_DA** | | |
-| | eigenlayer | ? |
-| | celestia | ? |
-| | avail | ? |
+| | eigenlayer | [ ] |
+| | celestia | [ ] |
+| | avail | [ ] |
 | **Bitcoin_Ecosystem** | | |
-| | bitcoin | ? |
-| | bitcoin-js | ? |
-| | bitcoin-rust | ? |
-| | mempool | ? |
-| | ordinals | ? |
-| | stacks | ? |
-| | bitvm | ? |
+| | bitcoin | [x] |
+| | bitcoin-js | [x] |
+| | bitcoin-rust | [ ] |
+| | mempool | [ ] |
+| | ordinals | [ ] |
+| | stacks | [ ] |
+| | bitvm | [ ] |
 | **DeFi_and_MEV** | | |
-| | uniswap-v4 | ? |
-| | aave-v3 | ? |
-| | flashbots | ? |
-| | searcher-builder | ? |
+| | uniswap-v4 | [x] |
+| | aave-v3 | [x] |
+| | flashbots | [ ] |
+| | searcher-builder | [ ] |
 | **Standards_and_Identity** | | |
-| | eips | ? |
-| | walletconnect | ? |
-| | did-core | ? |
+| | eips | [ ] |
+| | walletconnect | [ ] |
+| | did-core | [ ] |
 | **Storage_and_Compute** | | |
-| | arweave | ? |
-| | filecoin | ? |
+| | arweave | [ ] |
+| | filecoin | [ ] |
 
 ???? skill ??????? `?` ?? `?`?
 
@@ -167,4 +169,6 @@ generate skills for <project> author hairy, use english.
 - `sources/` ? Type 1 ????????? skills?
 - `vendor/` ? Type 2 ???????? skills?
 - `skills/` ? ????
+- `instructions/` ? ????????
+lls/` ? ????
 - `instructions/` ? ????????

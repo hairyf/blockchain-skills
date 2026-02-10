@@ -19,7 +19,10 @@
 /bonfire start generate wagmi skill
 /bonfire start generate ethers skill
 /bonfire start generate openzeppelin skill
-
+/bonfire start generate uniswap-v4 skill
+/bonfire start generate aave-v3 skill
+/bonfire start generate bitcoin skill
+/bonfire start generate bitcoin-js skill
 ---
 
 /bonfire start generate slither skill
@@ -45,15 +48,11 @@
 /bonfire start generate eigenlayer skill
 /bonfire start generate celestia skill
 /bonfire start generate avail skill
-* /bonfire start generate bitcoin skill
-* /bonfire start generate bitcoin-js skill
 /bonfire start generate bitcoin-rust skill
 /bonfire start generate mempool skill
 /bonfire start generate ordinals skill
 /bonfire start generate stacks skill
 /bonfire start generate bitvm skill
-* /bonfire start generate uniswap-v4 skill
-* /bonfire start generate aave-v3 skill
 /bonfire start generate flashbots skill
 /bonfire start generate searcher-builder skill
 /bonfire start generate eips skill
