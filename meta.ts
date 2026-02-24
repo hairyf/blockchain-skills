@@ -10,10 +10,16 @@ export interface VendorSkillMeta {
 export const submodules = {
   // Blockchain_Documentation
   'solidity': 'https://github.com/ethereum/solidity',
+
   'solana': 'https://github.com/solana-foundation/solana-com',
+  'solana-anchor': 'https://github.com/solana-foundation/anchor',
+
   'tron': 'https://github.com/tronprotocol/documentation-en',
   'tron-java': 'https://github.com/tronprotocol/java-tron',
+
   'ton': 'https://github.com/ton-org/docs',
+  'ton-tact': 'https://github.com/tact-lang/tact',
+
   'geth': 'https://github.com/ethereum/go-ethereum',
   'reth': 'https://github.com/paradigmxyz/reth',
 
@@ -29,6 +35,7 @@ export const submodules = {
   // Development_Frameworks
   'foundry': 'https://github.com/foundry-rs/foundry',
   'hardhat': 'https://github.com/NomicFoundation/hardhat',
+  'hardhat-tron': 'https://github.com/aziz1975/layerzero-hardhat-tron',
   'anchor': 'https://github.com/coral-xyz/anchor',
   'viem': 'https://github.com/wevm/viem',
   'wagmi': 'https://github.com/wevm/wagmi',

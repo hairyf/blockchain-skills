@@ -178,3 +178,9 @@
 [submodule "sources/optimism"]
 	path = sources/optimism
 	url = https://github.com/ethereum-optimism/specs
+[submodule "sources/solana-anchor"]
+	path = sources/solana-anchor
+	url = https://github.com/solana-foundation/anchor
+[submodule "sources/ton-tact"]
+	path = sources/ton-tact
+	url = https://github.com/tact-lang/tact
