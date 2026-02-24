@@ -1,116 +1,175 @@
-# Hairy's Skills
+# Blockchain Master Skills
 
 > Forked from [antfu/skills](https://github.com/antfu/skills)
 
-A curated collection of [Agent Skills](https://agentskills.io/home) based on [Anthony Fu's skills collection](https://github.com/antfu/skills), extended with additional skills reflecting [Hairyf](https://github.com/hairyf)'s preferences, experience, and best practices for web development.
+A blockchain-focused collection of [Agent Skills](https://agentskills.io/home),
+forked from [Anthony Fu's skills collection](https://github.com/antfu/skills)
+and adapted for Web3 engineering workflows.
 
 > [!IMPORTANT]
-> This is a proof-of-concept project for generating agent skills from source documentation and keeping them in sync.
-> I haven't fully tested how well the skills perform in practice, so feedback and contributions are greatly welcome.
+> This is a proof-of-concept project for generating agent skills from source
+> documentation and keeping them in sync. The skills are still evolving, so
+> feedback and contributions are highly appreciated.
 
 ## Installation
 
 ```bash
-pnpx skills add hairyf/skills
+pnpx skills add hairyf/blockchain-master
 ```
 
-or to install all of them globally:
+Or install all skills globally:
 
 ```bash
-pnpx skills add hairyf/skills --all -g
+pnpx skills add hairyf/blockchain-master --all -g
 ```
 
-Learn more about the CLI usage at [skills](https://github.com/vercel-labs/skills).
+For CLI details, see [skills](https://github.com/vercel-labs/skills).
 
 ## Skills
 
-This collection extends Anthony Fu's original collection with additional skills from Hairyf. It includes skills from different sources with different scopes, covering both Vue/Vite/Nuxt ecosystem and React/Next.js ecosystem.
+This repository focuses on blockchain protocols, tooling, and infrastructure.
+Most skills are generated from upstream documentation and organized by project.
 
-### Hand-maintained Skills
+### Hand-Written Skills
 
-> Opinionated
-
-Manually maintained skills reflecting personal preferences and best practices.
-
-| Skill | Description | Maintainer |
-|-------|-------------|------------|
-| [hairy](skills/hairy) | Hairyf's preferences and best practices for web development (TypeScript, ESLint, pnpm, Vitest, etc.) | Hairyf |
-| [antfu](skills/antfu) | Anthony Fu's preferences and best practices for app/library projects (eslint, pnpm, vitest, vue, etc.) | Anthony Fu |
+There are currently no hand-written/manual skills enabled in this repository.
+See `meta.ts` (`manual`) for the current status.
 
 ### Skills Generated from Official Documentation
 
-> Unopinionated but with tilted focus (e.g. TypeScript, ESM, Composition API, and other modern stacks)
+> Mostly unopinionated, with a modern-stack focus (TypeScript, ESM, Composition API, etc.)
 
-Generated from official documentation and fine-tuned for agent usage.
+Generated from upstream documentation and adapted for agent workflows.
 
-#### Any Group of Projects
+#### Generated Project Skills
 
-| Skill | Description | Source |
-|-------|-------------|--------|
+Current generated skills in `skills/` (`53` total):
+
+| Skill | Source |
+|-------|--------|
+| [aave-v3](skills/aave-v3) | `sources/aave-v3/docs` |
+| [aderyn](skills/aderyn) | `sources/aderyn/docs` |
+| [alchemy](skills/alchemy) | `sources/alchemy/docs` |
+| [anchor](skills/anchor) | `sources/anchor/docs` |
+| [arbitrum](skills/arbitrum) | `sources/arbitrum/docs` |
+| [arweave](skills/arweave) | `sources/arweave/docs` |
+| [avail](skills/avail) | `sources/avail/docs` |
+| [axelar](skills/axelar) | `sources/axelar/docs` |
+| [bitcoin](skills/bitcoin) | `sources/bitcoin/docs` |
+| [bitcoin-js](skills/bitcoin-js) | `sources/bitcoin-js/docs` |
+| [bitcoin-rust](skills/bitcoin-rust) | `sources/bitcoin-rust/docs` |
+| [bitvm](skills/bitvm) | `sources/bitvm/docs` |
+| [cairo](skills/cairo) | `sources/cairo/docs` |
+| [celestia](skills/celestia) | `sources/celestia/docs` |
+| [circom](skills/circom) | `sources/circom/docs` |
+| [cosmos](skills/cosmos) | `sources/cosmos/docs` |
+| [did-core](skills/did-core) | `sources/did-core/docs` |
+| [echidna](skills/echidna) | `sources/echidna/docs` |
+| [eigenlayer](skills/eigenlayer) | `sources/eigenlayer/docs` |
+| [envio](skills/envio) | `sources/envio/docs` |
+| [ethers](skills/ethers) | `sources/ethers/docs` |
+| [filecoin](skills/filecoin) | `sources/filecoin/docs` |
+| [flashbots](skills/flashbots) | `sources/flashbots/docs` |
+| [foundry](skills/foundry) | `sources/foundry/docs` |
+| [getblock](skills/getblock) | `sources/getblock/docs` |
+| [geth](skills/geth) | `sources/geth/docs` |
+| [halo2](skills/halo2) | `sources/halo2/docs` |
+| [halmos](skills/halmos) | `sources/halmos/docs` |
+| [hardhat](skills/hardhat) | `sources/hardhat/docs` |
+| [hyperlane](skills/hyperlane) | `sources/hyperlane/docs` |
+| [mempool](skills/mempool) | `sources/mempool/docs` |
+| [moralis](skills/moralis) | `sources/moralis/docs` |
+| [openzeppelin](skills/openzeppelin) | `sources/openzeppelin/docs` |
+| [optimism](skills/optimism) | `sources/optimism/docs` |
+| [ordinals](skills/ordinals) | `sources/ordinals/docs` |
+| [risc0](skills/risc0) | `sources/risc0/docs` |
+| [searcher-builder](skills/searcher-builder) | `sources/searcher-builder/docs` |
+| [slither](skills/slither) | `sources/slither/docs` |
+| [solana](skills/solana) | `sources/solana/docs` |
+| [solidity](skills/solidity) | `sources/solidity/docs` |
+| [sp1](skills/sp1) | `sources/sp1/docs` |
+| [stacks](skills/stacks) | `sources/stacks/docs` |
+| [starknet](skills/starknet) | `sources/starknet/docs` |
+| [subsquid](skills/subsquid) | `sources/subsquid/docs` |
+| [thegraph](skills/thegraph) | `sources/thegraph/docs` |
+| [ton](skills/ton) | `sources/ton/docs` |
+| [tron-java](skills/tron-java) | `sources/tron-java/docs` |
+| [uniswap-v4](skills/uniswap-v4) | `sources/uniswap-v4/docs` |
+| [viem](skills/viem) | `sources/viem/docs` |
+| [wagmi](skills/wagmi) | `sources/wagmi/docs` |
+| [walletconnect](skills/walletconnect) | `sources/walletconnect/docs` |
+| [wormhole](skills/wormhole) | `sources/wormhole/docs` |
+| [zksync-era](skills/zksync-era) | `sources/zksync-era/docs` |
 
 ### Vendored Skills
 
 Synced from external repositories that maintain their own skills.
 
-#### Official Skills
-
-| Skill | Description | Source |
-|-------|-------------|--------|
-
-#### Community Skills
-
-| Skill | Description | Source |
-|-------|-------------|--------|
+There are currently no vendored skills configured (`vendors` in `meta.ts` is
+empty).
 
 ## FAQ
 
 ### What Makes This Collection Different?
 
-This collection is based on [Anthony Fu's skills collection](https://github.com/antfu/skills) and extends it with:
+This collection starts from
+[Anthony Fu's skills collection](https://github.com/antfu/skills), but is
+re-scoped for blockchain engineering:
 
-- **Additional Skills**: More skills covering React/Next.js ecosystem, animation libraries, backend frameworks, desktop apps (Electron, Tauri), API specifications (OpenAPI 2.0/3.2), and build tools (unplugin)
-- **Architecture & Starters**: Skills for scaffolding Nuxt/Vue/TS libraries/CLI/VSCode/WebExtension projects (arch-nuxt, arch-tsdown, arch-unplugin, arch-vscode, arch-webext-vue, etc.)
-- **Hairyf's Projects**: Skills for Hairyf's own open-source projects (hairylib, valtio-define, overlastic)
-- **Personal Preferences**: Hairyf's own opinionated preferences and best practices
+- **Blockchain-first coverage**: L1/L2 protocols, smart contract tooling, wallet standards, data/indexing infrastructure, ZK stacks, and security tooling.
+- **Source-linked generation**: Skills are generated from upstream project docs tracked through Git submodules in `sources/`.
+- **Operational update model**: Skills are refreshed using SHA-tracked diffs (`GENERATION.md` / `SYNC.md`) so updates stay traceable.
+- **Template-friendly workflow**: The repo can be forked and adapted to your own domain-specific skill collection.
 
-The key difference from the original collection is that it uses git submodules to directly reference source documentation. This provides more reliable context and allows the skills to stay up-to-date with upstream changes over time.
+The key difference from the original collection is that this project uses Git
+submodules to reference source documentation directly. This improves reliability
+and makes it easier to keep skills aligned with upstream updates over time.
 
-The project is also designed to be flexible - you can use it as a template to generate your own skills collection.
+The project is also flexible: you can use it as a template to build your own
+customized skill collection.
 
-### Skills vs llms.txt vs AGENTS.md
+### Skills vs `llms.txt` vs `AGENTS.md`
 
-To me, the value of skills lies in being **shareable** and **on-demand**.
+The core value of skills is that they are both **shareable** and **on-demand**.
 
-Being shareable makes prompts easier to manage and reuse across projects. Being on-demand means skills can be pulled in as needed, scaling far beyond what any agent's context window could fit at once.
+Shareable skills make prompts easier to manage and reuse across projects.
+On-demand loading allows much larger knowledge coverage than a single context
+window can hold at once.
 
-You might hear people say "AGENTS.md outperforms skills". I think that's true — AGENTS.md loads everything upfront, so agents always respect it, whereas skills can have false negatives where agents don't pull them in when you'd expect. That said, I see this more as a gap in tooling and integration that will improve over time. Skills are really just a standardized format for agents to consume—plain markdown files at the end of the day. Think of them as a knowledge base for agents. If you want certain skills to always apply, you can reference them directly in your AGENTS.md.
+Some people say "`AGENTS.md` outperforms skills." That is often true today:
+`AGENTS.md` is loaded upfront, while skills may be missed if they are not
+invoked. This is mainly a tooling and integration gap that should improve over
+time. In practice, skills are standardized Markdown knowledge modules for
+agents. If some skills must always apply, you can reference them directly in
+your `AGENTS.md`.
 
 ## Generate Your Own Skills
 
 Fork this project to create your own customized skill collection.
 
-1. Fork or clone this repository
+1. Fork or clone this repository.
 2. Install dependencies: `pnpm install`
-3. Update `meta.ts` with your own projects and skill sources
-4. Run `nr start cleanup` to remove existing submodules and skills
-5. Run `nr start init` to clone the submodules
-6. Run `nr start sync` to sync vendored skills
-7. Ask your agent to "generate skills for \<project\> anthor \<author\>, use <language>." (recommended one at a time to manage token usage)
+3. Update `meta.ts` with your own projects and skill sources.
+4. Run `nr start cleanup` to remove existing submodules and skills.
+5. Run `nr start init` to clone submodules.
+6. Run `nr start sync` to sync vendored skills.
+7. Ask your agent to generate skills, for example: `generate skills for <project> author <author>, use <language>`. (Recommended: one project at a time to control token usage.)
 
-**Ongoing maintenance:**
+**Ongoing maintenance**
 
-- **More, until all** — When you say "more" (or ask for more coverage) for an existing skill, the agent compares current `references/` with the source docs, identifies missing modules, adds new reference files, and updates `SKILL.md` (and `GENERATION.md` for Type 1).
-- **Update** — When you say "update" (or ask to refresh from source) for a skill, the agent runs `git diff` against the SHA in `GENERATION.md` / `SYNC.md`, then updates only the affected references, `SKILL.md`, and tracking metadata.
+- **More, until all**: When you say "more" (or ask for more coverage) for an existing skill, the agent compares current `references/` with source docs, identifies missing modules, adds new reference files, and updates `SKILL.md` (plus `GENERATION.md` for Type 1 skills).
+- **Update**: When you say "update" (or ask to refresh from source), the agent runs `git diff` against the SHA recorded in `GENERATION.md` or `SYNC.md`, then updates only affected references, `SKILL.md`, and tracking metadata.
 
 See [AGENTS.md](AGENTS.md) for detailed generation guidelines.
 
 ## Credits
 
 - Original project: [antfu/skills](https://github.com/antfu/skills) by [Anthony Fu](https://github.com/antfu)
-- Extended by: [Hairyf](https://github.com/hairyf)
+- Blockchain adaptation: [hairyf/blockchain-master](https://github.com/hairyf/blockchain-master)
 
 ## License
 
-Skills and the scripts in this repository are [MIT](LICENSE.md) licensed.
+Skills and scripts in this repository are licensed under [MIT](LICENSE.md).
 
-Vendored skills from external repositories retain their original licenses - see each skill directory for details.
+Vendored skills from external repositories retain their original licenses. See
+each skill directory for details.
