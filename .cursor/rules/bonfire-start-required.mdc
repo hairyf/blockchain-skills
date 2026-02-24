@@ -1,0 +1,20 @@
+---
+description: Require /bonfire start before any work
+alwaysApply: true
+---
+
+# Bonfire Session Bootstrap Rule
+
+All AI agent work in this repository must start with `/bonfire start` before any other action.
+
+## Required Behavior
+
+- Treat `/bonfire start` as a hard prerequisite for every new session.
+- Do not begin coding, planning, editing, or execution before session bootstrap is complete.
+- If not started yet, run `/bonfire start` first, then continue.
+
+## Source
+
+This rule is derived from `AGENTS.md`:
+
+- `Session must begin with /bonfire start before any other work.`
