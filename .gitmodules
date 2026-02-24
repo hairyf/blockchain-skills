@@ -175,3 +175,6 @@
 [submodule "sources/filecoin"]
 	path = sources/filecoin
 	url = https://github.com/filecoin-project/lotus
+[submodule "sources/optimism"]
+	path = sources/optimism
+	url = https://github.com/ethereum-optimism/specs
