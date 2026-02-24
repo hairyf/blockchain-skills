@@ -178,7 +178,7 @@ async function syncSubmodules() {
   // Update all submodules
   spinner.start('Updating submodules...')
   try {
-    exec('git submodule update --remote --merge')
+    exec('git submodule update --remote --merge --no-recursive')
     spinner.stop('Submodules updated')
   }
   catch (e) {
