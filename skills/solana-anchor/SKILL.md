@@ -20,6 +20,9 @@ Anchor is a Solana program framework: Rust eDSL with macros (`declare_id`, `#[pr
 | IDL | Interface Description Language, instructions/accounts/discriminators, client use | [core-idl](references/core-idl.md) |
 | PDA | Program Derived Addresses, seeds, bump, seeds::program, init, IDL resolution | [core-pda](references/core-pda.md) |
 | Workspace | init, new, program layout, build/test/deploy flow | [core-workspace](references/core-workspace.md) |
+| Realloc | Resize accounts, realloc::payer, realloc::zero | [core-realloc](references/core-realloc.md) |
+| Close Account | close = target, rent reclamation | [core-close-account](references/core-close-account.md) |
+| Remaining Accounts | ctx.remaining_accounts, variadic instructions, CPI | [core-remaining-accounts](references/core-remaining-accounts.md) |
 
 ## References (Program & Config)
 
@@ -44,6 +47,7 @@ Anchor is a Solana program framework: Rust eDSL with macros (`declare_id`, `#[pr
 | Token 2022 Extensions | ExtensionType, tlv_data, extension lifecycle, anchor-spl token_2022_extensions | [features-token-extensions](references/features-token-extensions.md) |
 | Example Programs | Curated program-examples repo—Basics, Tokens, Token 2022—when to use each | [features-examples](references/features-examples.md) |
 | Testing | Mollusk (Rust instruction harness), LiteSVM (Rust/TS/Python VM) | [features-testing](references/features-testing.md) |
+| Upgrade and Migrate | anchor upgrade, migrate script, upgrade authority | [features-upgrade-migrate](references/features-upgrade-migrate.md) |
 
 ## Clients
 
@@ -57,6 +61,7 @@ Anchor is a Solana program framework: Rust eDSL with macros (`declare_id`, `#[pr
 | Topic | Description | Reference |
 |-------|-------------|-----------|
 | Security | Sealevel attacks, constraints, UncheckedAccount usage | [best-practices-security](references/best-practices-security.md) |
+| Constraints and Validation | When to use which constraints, avoid UncheckedAccount pitfalls | [best-practices-constraints](references/best-practices-constraints.md) |
 
 ## Advanced
 

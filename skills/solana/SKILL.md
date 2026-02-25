@@ -20,6 +20,7 @@ Concise reference for building on Solana: accounts, transactions, programs, PDAs
 | Versioned Transactions | v0 message, lookup tables, maxSupportedTransactionVersion | [core-versioned-transactions](references/core-versioned-transactions.md) |
 | Programs & PDA | Programs, PDA derivation, canonical bump | [core-programs-pda](references/core-programs-pda.md) |
 | CPI & Fees | Cross-program invocation, base/priority fees, CU | [core-cpi-fees](references/core-cpi-fees.md) |
+| Rent | Rent exemption, getMinimumBalanceForRentExemption, reclaim on close | [core-rent](references/core-rent.md) |
 
 ## Clients & Frontend
 
@@ -36,6 +37,9 @@ Concise reference for building on Solana: accounts, transactions, programs, PDAs
 | Staking | Stake accounts, delegate/withdraw, warmup/cooldown, merge/split | [features-staking](references/features-staking.md) |
 | Confirmation & Expiration | Blockhash validity, commitment levels, confirmation flow | [features-confirmation](references/features-confirmation.md) |
 | Actions & Blinks | Solana Actions API, blinks, actions.json | [features-actions-blinks](references/features-actions-blinks.md) |
+| Retry & Rebroadcast | maxRetries, lastValidBlockHeight, when to re-sign | [features-retry](references/features-retry.md) |
+| Fee Sponsorship | Fee payer, gas abstraction, fee relayer | [features-fee-sponsorship](references/features-fee-sponsorship.md) |
+| Offline Signing | Serialize, sign off-network, recover, durable nonce | [features-offline-signing](references/features-offline-signing.md) |
 
 ## Tokens
 

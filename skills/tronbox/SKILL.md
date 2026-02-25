@@ -21,6 +21,8 @@ TronBox is a Truffle-style framework for TRON: smart contract compilation, migra
 | Testing | tronbox test, test discovery, artifacts in tests | [core-testing](references/core-testing.md) |
 | Console | Interactive REPL with contract abstractions | [core-console](references/core-console.md) |
 | CLI | All commands and options | [core-cli](references/core-cli.md) |
+| Artifacts & Resolver | Build output shape, resolver order, artifacts.require / resolve | [core-artifacts-resolver](references/core-artifacts-resolver.md) |
+| Contract abstraction | new(), at(), deployed(), call(), link, defaults | [core-contract-abstraction](references/core-contract-abstraction.md) |
 
 ## Features
 
@@ -28,3 +30,13 @@ TronBox is a Truffle-style framework for TRON: smart contract compilation, migra
 |-------|-------------|-----------|
 | EVM mode | EVM chains, tronbox-evm-config.js, --evm, ethers | [features-evm](references/features-evm.md) |
 | Init & Unbox | tronbox init (sample/MetaCoin), unbox templates | [features-init-unbox](references/features-init-unbox.md) |
+| Flatten | Flatten contracts and dependencies to single file (verification/auditing) | [features-flatten](references/features-flatten.md) |
+| Deploy | Alias for migrate; same options and behavior | [features-deploy](references/features-deploy.md) |
+| TronWrap & provider | TronWeb/ethers context, waitForTransactionReceipt, TRE | [features-tronwrap](references/features-tronwrap.md) |
+
+## Best Practices
+
+| Topic | Description | Reference |
+|-------|-------------|-----------|
+| Environment & networks | Environment.detect, default network, network_id/from, common errors | [best-practices-environment](references/best-practices-environment.md) |
+| Errors & exit behavior | TaskError, config/compile/migrate errors, exit codes | [best-practices-errors](references/best-practices-errors.md) |

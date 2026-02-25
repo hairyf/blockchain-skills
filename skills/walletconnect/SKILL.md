@@ -27,6 +27,7 @@ WalletConnect is an open protocol for connecting wallets to dApps via end-to-end
 |-------|-------------|-----------|
 | Universal Provider | Multi-chain provider, connect, request, setDefaultChain, events | [features-universal-provider](references/features-universal-provider.md) |
 | Ethereum Provider | EIP-1193 provider, connect, request, events, Next.js/SSR | [features-ethereum-provider](references/features-ethereum-provider.md) |
+| Signer Connection | IJsonRpcConnection wrapper, open/close/send, signer events | [features-signer-connection](references/features-signer-connection.md) |
 
 ### Pay
 
@@ -39,3 +40,4 @@ WalletConnect is an open protocol for connecting wallets to dApps via end-to-end
 | Topic | Description | Reference |
 |-------|-------------|-----------|
 | Security and Debugging | Keys, validation, URIs; DEBUG logs, session/pairing inspection | [best-practices-security-debugging](references/best-practices-security-debugging.md) |
+| Error Handling | getSdkError, SDK error codes, reject/disconnect reasons | [best-practices-error-handling](references/best-practices-error-handling.md) |

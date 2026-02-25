@@ -18,6 +18,7 @@ Go Ethereum (geth) is the Golang execution-layer client for Ethereum. It runs fu
 | Overview | What geth is, executables (geth, clef, abigen, evm, rlpdump), common flows | [core-overview](references/core-overview.md) |
 | CLI | Command-line options, subcommands, config file (TOML) | [core-cli](references/core-cli.md) |
 | JSON-RPC | Transports (HTTP, WS, IPC), namespaces, security | [core-rpc](references/core-rpc.md) |
+| Sync modes | Snap (default), full, archive, light; when to use which | [core-sync-modes](references/core-sync-modes.md) |
 
 ## Features
 
@@ -34,6 +35,15 @@ Go Ethereum (geth) is the Golang execution-layer client for Ethereum. It runs fu
 | Simulated backend | In-process blockchain for Go tests without live node | [features-simulated-backend](references/features-simulated-backend.md) |
 | rlpdump | Decode RLP dumps to readable format | [features-rlpdump](references/features-rlpdump.md) |
 | ethkey | Keyfile generate, inspect, sign/verify message, change password | [features-ethkey](references/features-ethkey.md) |
+| Beacon/Engine API | Post-merge consensus connection, JWT, checkpoint sync | [features-beacon-engine](references/features-beacon-engine.md) |
+| Docker | Run geth in Docker; ports, volume, exposing RPC | [features-docker](references/features-docker.md) |
+| Kurtosis | Multi-node private network (geth + consensus stack) | [features-kurtosis](references/features-kurtosis.md) |
+
+## Best Practices
+
+| Topic | Description | Reference |
+|-------|-------------|-----------|
+| RPC security | Which APIs to expose, avoid unlock over HTTP/WS, prefer IPC and Clef | [best-practices-rpc-security](references/best-practices-rpc-security.md) |
 
 ## External Links
 

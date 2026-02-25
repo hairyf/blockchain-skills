@@ -16,9 +16,11 @@ Blueprint is a development environment for the TON blockchain: create projects w
 | Topic | Description | Reference |
 |-------|-------------|-----------|
 | Project structure | Directory layout, contracts/wrappers/compilables/tests/scripts/build | [core-project-structure](references/core-project-structure.md) |
-| CLI commands | build, test, run, create, rename, help, pack | [core-commands](references/core-commands.md) |
+| CLI commands | build, test, run, create, rename, help, pack, snapshot, verify, set, convert | [core-commands](references/core-commands.md) |
 | NetworkProvider | sender, open, waitForDeploy, waitForLastTransaction, api, config | [core-network-provider](references/core-network-provider.md) |
 | Config | blueprint.config.ts, plugins, network, requestTimeout, recursiveWrappers, manifestUrl | [core-config](references/core-config.md) |
+| UIProvider | write, prompt, input, choose, setActionPrompt, inputAddress for scripts | [core-ui-provider](references/core-ui-provider.md) |
+| Networks and explorers | Network, Explorer, CustomNetwork, NetworkVersion for run/verify/config | [core-networks-explorers](references/core-networks-explorers.md) |
 
 ## Features
 
@@ -28,7 +30,12 @@ Blueprint is a development environment for the TON blockchain: create projects w
 |-------|-------------|-----------|
 | Scripts | run(provider, args), deploy pattern, blueprint run | [features-scripts](references/features-scripts.md) |
 | Compilation | compile(), CompilerConfig, compilables, build output, hooks | [features-compilation](references/features-compilation.md) |
+| Build API | buildOne, buildAll, buildAllTact, artifact output | [features-build-api](references/features-build-api.md) |
 | Wrappers | Contract, createFromConfig, createFromAddress, sendDeploy | [features-wrappers](references/features-wrappers.md) |
+| Plugins | Plugin, PluginRunner, custom CLI commands | [features-plugins](references/features-plugins.md) |
+| Verify | Verify deployed contract on verifier.ton.org, flags, compiler version | [features-verify](references/features-verify.md) |
+| Pack | Publish-ready wrapper package, package.ts, dist, npm publish | [features-pack](references/features-pack.md) |
+| Create and rename | Create contract from template, rename across wrappers/scripts/tests | [features-create-rename](references/features-create-rename.md) |
 
 ### Best practices
 

@@ -18,6 +18,7 @@ Concise reference for building Solana apps with Kit: functional API, tree-shakea
 | Setup | Install, RPC/RPC Subscriptions, typed client | [core-setup](references/core-setup.md) |
 | RPC | HTTP client — getBalance, getAccountInfo, getLatestBlockhash, send | [core-rpc](references/core-rpc.md) |
 | RPC Subscriptions | WebSocket — accountNotifications, slotNotifications | [core-rpc-subscriptions](references/core-rpc-subscriptions.md) |
+| Functional | pipe(), pipeline transforms | [core-functional](references/core-functional.md) |
 | Signers | KeyPairSigner, airdrop, wallet swap, no-op | [core-signers](references/core-signers.md) |
 | Transactions | pipe, fee payer, lifetime, instructions, sign, send-and-confirm | [core-transactions](references/core-transactions.md) |
 | Transaction confirmation | Block height exceedence, recent signature, nonce invalidation, timeout | [core-transaction-confirmation](references/core-transaction-confirmation.md) |
@@ -43,6 +44,8 @@ Concise reference for building Solana apps with Kit: functional API, tree-shakea
 | React | useSignIn, useWalletAccountTransactionSigner, useSignAndSendTransaction | [features-react](references/features-react.md) |
 | RPC transports | Custom transport — failover, retry, round-robin, sharding | [features-rpc-transports](references/features-rpc-transports.md) |
 | RPC API augmentation | mainnet/devnet, cherry-pick methods, custom RPC methods | [features-rpc-api-augmentation](references/features-rpc-api-augmentation.md) |
+| Create Solana program | pnpm create solana-program, Codama-generated JS client | [features-create-solana-program](references/features-create-solana-program.md) |
+| Unstable subscriptions | createSolanaRpcSubscriptions_UNSTABLE, block/slotsUpdates | [features-unstable-subscriptions](references/features-unstable-subscriptions.md) |
 
 ## Best practices
 

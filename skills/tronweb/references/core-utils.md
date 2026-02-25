@@ -1,48 +1,67 @@
 ---
 name: tronweb-utils
-description: TronWeb utils — ABI, transaction, deserializeTx, accounts, address, validations.
+description: TronWeb utils — ABI, transaction, deserializeTx, accounts, address, validations, message, typedData.
 ---
 
 # Utils
 
-Standalone utilities exported as `utils` and from `tronweb/utils` for ABI encode/decode, transaction helpers, deserialization, and account generation.
-
-## Import
-
-```typescript
-import { utils } from 'tronweb';
-// or
-import { utils } from 'tronweb/utils';
-```
+`tronWeb.utils` (and static `import { utils } from 'tronweb'`) exposes helpers for ABI, transactions, accounts, address/code, validations, and signing utilities.
 
 ## ABI and transaction
 
-- **utils.abi** — encode/decode by ABI (used internally by Contract and TransactionBuilder).
-- **utils.transaction** — `txCheck(transaction)`, building of trigger/create contract payloads.
-- **utils.deserializeTx** — deserialize transaction from `raw_data_hex` (TransferContract, TriggerSmartContract, CreateSmartContract, and others as per CHANGELOG). Use for parsing signed/unsigned tx payloads.
+```typescript
+utils.abi.encodeParams(types, values);   // ABI-encode params
+utils.abi.decodeParams(types, data);     // Decode hex data
+utils.transaction.*                       // Transaction building/checks
+utils.deserializeTx(hexOrBuffer);         // Deserialize serialized tx
+```
+
+Use `txCheck(transaction)` from `utils.transaction` to validate before sign/broadcast.
 
 ## Accounts
 
 ```typescript
 const account = await TronWeb.createAccount();
-const { privateKey, address } = TronWeb.createRandom(password?, path?, wordlist?);
-const { privateKey, address } = TronWeb.fromMnemonic(mnemonic, path?, password?, wordlist?);
+// { privateKey, publicKey, address: { base58, hex } }
+
+const random = TronWeb.createRandom(password?, path?, wordlist?);
+// { mnemonic, privateKey, publicKey, address, path }
+
+const fromMnemonic = TronWeb.fromMnemonic(mnemonic, path?, password?, wordlist?);
+// path must match ^m/44'/195'/... (TRON BIP44)
 ```
 
-Same APIs exist on instance: `tronWeb.createAccount()`, `tronWeb.createRandom(...)`, `tronWeb.fromMnemonic(...)`.
+Also available as `utils.accounts.generateAccount()`, `generateRandom()`, `generateAccountWithMnemonic()`.
 
 ## Address and validations
 
-- **utils.address** — same as `TronWeb.address` (fromHex, toHex, fromPrivateKey, etc.).
-- **utils.isString**, **utils.isInteger**, **utils.isHex**, **utils.isBigNumber**, etc. — used for parameter checks.
+```typescript
+utils.address.*     // toHex, fromHex, isAddress, etc. (see core-address-units)
+utils.validations.* // isString, isInteger, isHex, isAddress, isBigNumber, etc.
+```
 
-## Key Points
+Use validations when validating user or API inputs before calling Trx/Contract/TransactionBuilder.
 
-- `deserializeTransaction` was moved from `utils.transaction` to `utils.deserializeTx` in v6.
-- For webpack: if you see `Transaction` of `globalThis.TronWebProto` undefined, add a rule for `.cjs` with `type: 'javascript/auto'`.
+## Message and typed data
+
+```typescript
+utils.message.signMessage(message, privateKey);
+utils.message.verifyMessage(message, signature);
+utils.message.hashMessage(message);
+
+utils.typedData.signTypedData(domain, types, value, privateKey);
+utils.typedData.verifyTypedData(domain, types, value, signature);
+// TypedDataEncoder, hashStruct, hashDomain, getPayload — EIP-712
+```
+
+## Key points
+
+- Prefer `TronWeb.createAccount` / `createRandom` / `fromMnemonic` for wallet creation; utils.accounts mirrors them.
+- Use ABI encode/decode for contract call data when not using contract(abi, address).methods.
+- deserializeTx useful for inspecting or re-signing serialized transactions.
 
 <!--
 Source references:
-- https://github.com/tronprotocol/tronweb (src/utils/index.ts, deserializeTx.ts, transaction.ts)
+- https://github.com/tronprotocol/tronweb (src/utils/index.ts, accounts.ts, abi, transaction, message, typedData)
 - https://tronweb.network/docu/docs/intro/
 -->
