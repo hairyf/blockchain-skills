@@ -5,7 +5,17 @@ description: Configure Hardhat for TRON—plugin, solidity/tronSolc version alig
 
 # Config
 
-Use `@layerzerolabs/hardhat-tron` with Hardhat. Every `tronSolc.compilers` version must also appear in `solidity.compilers` (plugin requirement). Use a TRON-supported Solidity version (e.g. `0.8.23`).
+Use `@layerzerolabs/hardhat-tron` with **Hardhat v2** (must be 2.x; Hardhat 3 is not compatible). Every `tronSolc.compilers` version must also appear in `solidity.compilers` (plugin requirement). Use a TRON-supported Solidity version (e.g. `0.8.23`).
+
+## Dependency versions
+
+| Package | Version | Notes |
+|---------|---------|-------|
+| hardhat | ^2.26.3 | **Must be v2**; v3 not supported |
+| @layerzerolabs/hardhat-tron | ^3.0.124 | TRON compile & network plugin |
+| @layerzerolabs/hardhat-deploy | ^0.11.45-lz.4 | Deploy scripts |
+| @nomicfoundation/hardhat-toolbox | ^6.1.0 | Toolbox |
+| dotenv | ^17.2.1 | Env vars |
 
 ## Example config
 

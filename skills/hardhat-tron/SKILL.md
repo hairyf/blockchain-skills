@@ -11,6 +11,16 @@ metadata:
 
 Use this skill when configuring Hardhat for TRON (Nile/mainnet), compiling Solidity with tronSolc, deploying with hardhat-deploy, or writing tests. Plugin: `@layerzerolabs/hardhat-tron`; deploy: `@layerzerolabs/hardhat-deploy`.
 
+## Dependencies & versions
+
+- **Hardhat must be v2**: `@layerzerolabs/hardhat-tron` requires Hardhat 2.x; Hardhat 3 is not supported.
+- Recommended versions (aligned with the example project):
+  - `hardhat`: `^2.26.3`
+  - `@layerzerolabs/hardhat-tron`: `^3.0.124`
+  - `@layerzerolabs/hardhat-deploy`: `^0.11.45-lz.4`
+  - `@nomicfoundation/hardhat-toolbox`: `^6.1.0`
+  - `dotenv`: `^17.2.1`
+
 ## Core References
 
 | Topic | Description | Reference |
