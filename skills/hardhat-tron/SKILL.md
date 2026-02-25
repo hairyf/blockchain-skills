@@ -2,7 +2,7 @@
 name: hardhat-tron
 description: Agent-oriented skills for Hardhat on TRON—config, compilation, deployment, and testing with @layerzerolabs/hardhat-tron and hardhat-deploy.
 metadata:
-  author: Anthony Fu
+  author: Hairy
   version: "2026.2.25"
   source: Generated from https://github.com/aziz1975/layerzero-hardhat-tron, scripts located at https://github.com/antfu/skills
 ---

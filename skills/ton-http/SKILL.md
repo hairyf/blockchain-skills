@@ -2,7 +2,7 @@
 name: ton-http
 description: TON HTTP API (TON Center / ton-http-api) — accounts, transactions, messages, send, runGetMethod; use Swagger for request/response parameters and return values.
 metadata:
-  author: Anthony Fu
+  author: Hairy
   version: "2026.2.25"
   source: Generated from sources/ton-http (toncenter/ton-http-api) and TON Index v3 Swagger
 ---

@@ -2,7 +2,7 @@
 name: straitsx
 description: StraitsX Card Issuing API — CMS (users, cards, lifecycle), Remote Host Authorization, webhooks; use for integrating card issuance and transaction approval.
 metadata:
-  author: Anthony Fu
+  author: Hairy
   version: "2026.2.25"
   source: Manual init from https://docs.straitsx.com/v1-CARDS/docs/introduction, cache at .bonfire/cache/straitsx
 ---

@@ -2,7 +2,7 @@
 name: ton-tact
 description: Tact language for TON blockchain smart contracts — types, contracts, messages, send/receive, stdlib, and security.
 metadata:
-  author: Anthony Fu
+  author: Hairy
   version: "2026.2.25"
   source: Generated from sources/ton-tact/docs, scripts located at https://github.com/antfu/skills
 ---

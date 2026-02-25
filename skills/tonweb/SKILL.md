@@ -2,7 +2,7 @@
 name: tonweb
 description: TonWeb JavaScript SDK for TON. Wallets, BOC, HttpProvider, NFT, Jetton, DNS.
 metadata:
-  author: Anthony Fu
+  author: Hairy
   version: "2026.2.25"
   source: Generated from sources/tonweb (toncenter/tonweb)
 ---

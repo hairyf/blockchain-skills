@@ -2,7 +2,7 @@
 name: solana-anchor
 description: Agent-oriented skills for the Anchor framework—Solana program structure, accounts, CPI, IDL, clients, and tooling.
 metadata:
-  author: Anthony Fu
+  author: Hairy
   version: "2026.2.25"
   source: Generated from https://github.com/solana-foundation/anchor, scripts located at https://github.com/antfu/skills
 ---

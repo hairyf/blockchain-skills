@@ -2,7 +2,7 @@
 name: ton
 description: TON Blockchain — addresses, messages, TVM, cells, Blueprint, contracts, payments, API.
 metadata:
-  author: Anthony Fu
+  author: Hairy
   version: "2026.2.9"
   source: Generated from https://github.com/ton-org/docs, scripts located at https://github.com/antfu/skills
 ---

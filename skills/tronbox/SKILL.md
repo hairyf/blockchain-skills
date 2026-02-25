@@ -2,7 +2,7 @@
 name: tronbox
 description: Development framework and testing environment for TRON (TVM) and EVM-compatible chains — compile, migrate, test, and console.
 metadata:
-  author: Anthony Fu
+  author: Hairy
   version: "2026.1.1"
   source: Generated from https://github.com/tronprotocol/tronbox, scripts located at https://github.com/antfu/skills
 ---

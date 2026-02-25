@@ -2,7 +2,7 @@
 name: uniswap-v4
 description: Uniswap v4 core pool logic — singleton PoolManager, unlock/callback, pool actions, hooks, and types.
 metadata:
-  author: Anthony Fu
+  author: Hairy
   version: "2026.2.9"
   source: Generated from https://github.com/Uniswap/v4-core, scripts at https://github.com/antfu/skills
 ---

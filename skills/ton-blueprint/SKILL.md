@@ -2,7 +2,7 @@
 name: ton-blueprint
 description: TON Blueprint development environment — project layout, build/test/run, NetworkProvider, config, scripts, wrappers, and deploy/testing practices.
 metadata:
-  author: Anthony Fu
+  author: Hairy
   version: "2026.2.25"
   source: Generated from https://github.com/ton-org/blueprint, scripts located at https://github.com/antfu/skills
 ---

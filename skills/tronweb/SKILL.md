@@ -2,7 +2,7 @@
 name: tronweb
 description: TronWeb — JavaScript/TypeScript SDK for TRON (HTTP API, contracts, transactions, events).
 metadata:
-  author: Anthony Fu
+  author: Hairy
   version: "2026.1.1"
   source: Generated from https://github.com/tronprotocol/tronweb, scripts located at https://github.com/antfu/skills
 ---
