@@ -17,6 +17,7 @@ Concise reference for building on Solana: accounts, transactions, programs, PDAs
 |-------|-------------|-----------|
 | Accounts | Account model, address, keypair, PDA | [core-accounts](references/core-accounts.md) |
 | Transactions & Instructions | Tx format, signatures, message, build & send | [core-transactions-instructions](references/core-transactions-instructions.md) |
+| Versioned Transactions | v0 message, lookup tables, maxSupportedTransactionVersion | [core-versioned-transactions](references/core-versioned-transactions.md) |
 | Programs & PDA | Programs, PDA derivation, canonical bump | [core-programs-pda](references/core-programs-pda.md) |
 | CPI & Fees | Cross-program invocation, base/priority fees, CU | [core-cpi-fees](references/core-cpi-fees.md) |
 
@@ -27,6 +28,14 @@ Concise reference for building on Solana: accounts, transactions, programs, PDAs
 | JavaScript/TypeScript | @solana/kit, web3.js, @solana/client, SPL | [clients-javascript](references/clients-javascript.md) |
 | Rust | solana-sdk, solana-client, keypair, RPC | [clients-rust](references/clients-rust.md) |
 | React & Next.js | @solana/react-hooks, provider, wallet | [frontend-react-nextjs](references/frontend-react-nextjs.md) |
+
+## Features
+
+| Topic | Description | Reference |
+|-------|-------------|-----------|
+| Staking | Stake accounts, delegate/withdraw, warmup/cooldown, merge/split | [features-staking](references/features-staking.md) |
+| Confirmation & Expiration | Blockhash validity, commitment levels, confirmation flow | [features-confirmation](references/features-confirmation.md) |
+| Actions & Blinks | Solana Actions API, blinks, actions.json | [features-actions-blinks](references/features-actions-blinks.md) |
 
 ## Tokens
 
@@ -48,3 +57,9 @@ Concise reference for building on Solana: accounts, transactions, programs, PDAs
 |-------|-------------|-----------|
 | Cookbook Recipes | Send SOL, keypair, balance, memo, priority fees | [cookbook-recipes](references/cookbook-recipes.md) |
 | Clusters & Terminology | Mainnet, devnet, terms, staking | [references-clusters-terminology](references/references-clusters-terminology.md) |
+
+## Best Practices
+
+| Topic | Description | Reference |
+|-------|-------------|-----------|
+| Compute Optimization | CU limits, measurement, logging, data types, PDAs | [best-practices-compute](references/best-practices-compute.md) |

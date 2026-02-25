@@ -12,6 +12,7 @@ export const submodules = {
   'solidity': 'https://github.com/ethereum/solidity',
 
   'solana': 'https://github.com/solana-foundation/solana-com',
+  'solana-kit': 'https://github.com/anza-xyz/kit.git',
   'solana-anchor': 'https://github.com/solana-foundation/anchor',
 
   'tron': 'https://github.com/tronprotocol/documentation-en',

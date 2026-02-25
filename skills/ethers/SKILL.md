@@ -18,6 +18,11 @@ Ethers.js is a complete, compact library for interacting with Ethereum: dapps, w
 | Provider, Signer, Contract | Read/write separation, BrowserProvider, JsonRpcProvider, connecting | [core-provider-signer](references/core-provider-signer.md) |
 | Units and Formatting | parseEther, parseUnits, formatEther, formatUnits | [core-units-format](references/core-units-format.md) |
 | ABI | Human-readable ABI, Fragment, encoding, event topics/data | [core-abi](references/core-abi.md) |
+| Wallet | Wallet, HDNodeWallet, mnemonic, id() for testing | [core-wallet](references/core-wallet.md) |
+| Transactions and Receipts | sendTransaction, wait, getBlockNumber, getFeeData, getTransactionCount | [core-transactions](references/core-transactions.md) |
+| Data and hex utilities | getBytes, toBeHex, ZeroAddress, ZeroHash, encodeBytes32String, solidityPacked | [core-utils](references/core-utils.md) |
+| Address | getAddress, isAddress, isAddressable, checksum | [core-address](references/core-address.md) |
+| Hashing | keccak256, id(string), use in selectors and testing | [core-hashing](references/core-hashing.md) |
 
 ## Features
 
@@ -27,6 +32,17 @@ Ethers.js is a complete, compact library for interacting with Ethereum: dapps, w
 |-------|-------------|-----------|
 | Contract | Creation, view/pure, state-changing, staticCall, events, queryFilter | [features-contract](references/features-contract.md) |
 | Signing | signMessage, verifyMessage, Signature, EIP-191, EIP-712 | [features-signing](references/features-signing.md) |
+| ENS | resolveName, getResolver, getAddress, getText, text records | [features-ens](references/features-ens.md) |
+| React Native | react-native-quick-crypto registration for performance | [features-react-native](references/features-react-native.md) |
+| Provider options | getDefaultProvider, JsonRpcProvider staticNetwork, broadcastTransaction | [features-providers](references/features-providers.md) |
+| Contract deployment | ContractFactory, bytecode, deploy(), waitForDeployment, fromSolidity | [features-contract-deploy](references/features-contract-deploy.md) |
+| EIP-712 typed data | signTypedData, verifyTypedData, TypedDataEncoder | [features-eip712](references/features-eip712.md) |
+
+## Best Practices
+
+| Topic | Description | Reference |
+|-------|-------------|-----------|
+| Error handling | Reverted tx, receipt.status, CALL_EXCEPTION, provider errors | [best-practices-errors](references/best-practices-errors.md) |
 
 ## Advanced
 

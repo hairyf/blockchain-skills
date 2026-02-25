@@ -19,6 +19,7 @@ Anchor is a Solana program framework: Rust eDSL with macros (`declare_id`, `#[pr
 | CPI | Cross-program invocation, CpiContext, PDA signers, invoke/invoke_signed | [core-cpi](references/core-cpi.md) |
 | IDL | Interface Description Language, instructions/accounts/discriminators, client use | [core-idl](references/core-idl.md) |
 | PDA | Program Derived Addresses, seeds, bump, seeds::program, init, IDL resolution | [core-pda](references/core-pda.md) |
+| Workspace | init, new, program layout, build/test/deploy flow | [core-workspace](references/core-workspace.md) |
 
 ## References (Program & Config)
 
@@ -39,12 +40,17 @@ Anchor is a Solana program framework: Rust eDSL with macros (`declare_id`, `#[pr
 | Errors | #[error_code], err!, require! and variants | [features-errors](references/features-errors.md) |
 | Zero-Copy | AccountLoader, load_init/load_mut/load, init vs zero | [features-zero-copy](references/features-zero-copy.md) |
 | declare_program! | IDL-based CPI and Rust client generation | [features-declare-program](references/features-declare-program.md) |
+| Tokens (SPL) | anchor-spl, mints, token accounts, ATAs, Token 2022, InterfaceAccount | [features-tokens](references/features-tokens.md) |
+| Token 2022 Extensions | ExtensionType, tlv_data, extension lifecycle, anchor-spl token_2022_extensions | [features-token-extensions](references/features-token-extensions.md) |
+| Example Programs | Curated program-examples repo—Basics, Tokens, Token 2022—when to use each | [features-examples](references/features-examples.md) |
+| Testing | Mollusk (Rust instruction harness), LiteSVM (Rust/TS/Python VM) | [features-testing](references/features-testing.md) |
 
 ## Clients
 
 | Topic | Description | Reference |
 |-------|-------------|-----------|
 | TypeScript | Program, methods, accounts, signers, rpc/transaction/instruction, fetch | [clients-typescript](references/clients-typescript.md) |
+| Rust | anchor-client, declare_program!, request/instructions/send, account fetch | [clients-rust](references/clients-rust.md) |
 
 ## Best Practices
 

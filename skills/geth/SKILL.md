@@ -27,6 +27,13 @@ Go Ethereum (geth) is the Golang execution-layer client for Ethereum. It runs fu
 |-------|-------------|-----------|
 | Clef | Standalone signer, external API, UI API (stdio-ui) | [feature-clef](references/feature-clef.md) |
 | abigen | Go contract bindings from ABI/bytecode, deploy and call | [feature-abigen](references/feature-abigen.md) |
+| EVM | Stateless t8n/t9n/b11r, bytecode run for testing and debugging | [features-evm](references/features-evm.md) |
+| devp2p | P2P debugging, ENR, node keys, DNS discovery, discv4/discv5, eth protocol tests | [features-devp2p](references/features-devp2p.md) |
+| JavaScript console | Interactive console and attach, web3 and management API | [features-console](references/features-console.md) |
+| Dev mode | Single-node PoA with prefunded account, instant blocks | [features-dev-mode](references/features-dev-mode.md) |
+| Simulated backend | In-process blockchain for Go tests without live node | [features-simulated-backend](references/features-simulated-backend.md) |
+| rlpdump | Decode RLP dumps to readable format | [features-rlpdump](references/features-rlpdump.md) |
+| ethkey | Keyfile generate, inspect, sign/verify message, change password | [features-ethkey](references/features-ethkey.md) |
 
 ## External Links
 
