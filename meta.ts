@@ -22,7 +22,7 @@ export const submodules = {
   'ton': 'https://github.com/ton-org/docs',
   'ton-tact': 'https://github.com/tact-lang/tact',
   'ton-blueprint': 'https://github.com/ton-org/blueprint',
-  'tonhttp': 'https://github.com/toncenter/ton-http-api',
+  'ton-http': 'https://github.com/toncenter/ton-http-api',
   'tonweb': 'https://github.com/toncenter/tonweb',
 
   'geth': 'https://github.com/ethereum/go-ethereum',

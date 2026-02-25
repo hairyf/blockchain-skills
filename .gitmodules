@@ -193,8 +193,8 @@
 [submodule "sources/ton-blueprint"]
 	path = sources/ton-blueprint
 	url = https://github.com/ton-org/blueprint
-[submodule "sources/tonhttp"]
-	path = sources/tonhttp
+[submodule "sources/ton-http"]
+	path = sources/ton-http
 	url = https://github.com/toncenter/ton-http-api
 [submodule "sources/tonweb"]
 	path = sources/tonweb
