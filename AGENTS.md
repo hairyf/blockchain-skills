@@ -38,13 +38,21 @@ For skills that are written by Anthony Fu with his preferences, experience, tast
 
 You don't need to do anything about them unless being asked.
 
+### Manual Initialization (no GitHub)
+
+Skills generated from docs that have no GitHub repo; source is `.bonfire/cache/<name>/`, and names are listed in `meta.ts` **`manual`** array. **Full workflow and rules:** [.bonfire/specs/manual-skill-initialization.md](.bonfire/specs/manual-skill-initialization.md).
+
 ## Repository Structure
 
 ```
 .
-├── meta.ts                     # Project metadata (repos & URLs)
+├── meta.ts                     # Project metadata (repos & URLs, submodules, manual)
 ├── instructions/               # Instructions for generating skills
 │   └── {project}.md            # Instructions for generating skills for {project}
+│
+├── .bonfire/
+│   └── cache/                  # Fetched docs for manual-initialized skills (no GitHub)
+│       └── {name}/             # Same name as skills/{name}, kebab-case
 │
 ├── sources/                    # Type 1: OSS repos (generate from docs)
 │   └── {project}/
@@ -160,11 +168,16 @@ Do not skip this review when the user asks for "more"; always check for gaps and
 
 When the user says "update" (or expresses intent to refresh skills from source), the agent MUST:
 
-1. **Determine** the skill type and target — from `skills/` and `meta.ts`, identify whether it is Type 1 (generated) or Type 2 (synced) and which project/output name.
+1. **Determine** the skill type and target — from `skills/` and `meta.ts`, identify whether it is Type 1 (generated), Type 2 (synced), or **manual** (listed in `meta.ts` `manual` array), and which project/output name.
 2. **For Type 1 (Generated):** Follow **Updating Generated Skills** — read `GENERATION.md` for the recorded SHA, run `git diff {old-sha}..HEAD -- docs/` in `sources/{project}/`, then update affected reference files, `SKILL.md`, and `GENERATION.md` with the new SHA.
 3. **For Type 2 (Synced):** Follow **Updating Synced Skills** — read `SYNC.md` for the recorded SHA, run `git diff {old-sha}..HEAD -- skills/{skill-name}/` in `vendor/{project}/`, then copy changed files to `skills/{output-name}/` and update `SYNC.md` with the new SHA.
+4. **For manual:** Re-fetch the **full doc set** from the original site into `.bonfire/cache/<name>/` (same discovery + batch-fetch as init), then update affected reference files, `SKILL.md`, and `GENERATION.md` (record new fetch date/source in `GENERATION.md`).
 
-Always perform the diff against the recorded SHA and update only what changed; then refresh the tracking metadata.
+Always perform the diff against the recorded SHA (or re-fetch for manual) and update only what changed; then refresh the tracking metadata.
+
+### When User Says "Initialize &lt;name&gt;"（初始化某个地址）
+
+When the user says **「初始化某个地址」** or **「初始化 &lt;name&gt;」** (doc has no GitHub URL), follow the workflow in [.bonfire/specs/manual-skill-initialization.md](.bonfire/specs/manual-skill-initialization.md).
 
 ## File Formats
 

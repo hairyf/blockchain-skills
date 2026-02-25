@@ -111,7 +111,9 @@ export const vendors: Record<string, VendorSkillMeta> = {
 }
 
 /**
- * Hand-written skills with Anthony Fu's preferences/tastes/recommendations
+ * Manual-initialized skills: no GitHub repo; docs are fetched to .bonfire/cache/<name>
+ * and skills generated from cache. Add the skill name here when user says "初始化 <name>".
+ * See .bonfire/specs/manual-skill-initialization.md for the full workflow.
  */
 export const manual = [
 ]
