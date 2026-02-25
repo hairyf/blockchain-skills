@@ -8,6 +8,7 @@ dist
 lib-cov
 logs
 node_modules
+.env
 temp
 
 # 只忽略「点目录」下的 skills（如 .cursor/skills），根目录 skills/ 保持跟踪

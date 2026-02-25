@@ -116,4 +116,5 @@ export const vendors: Record<string, VendorSkillMeta> = {
  * See .bonfire/specs/manual-skill-initialization.md for the full workflow.
  */
 export const manual = [
+  'straitsx',
 ]
