@@ -1,11 +1,11 @@
 ---
 name: openzeppelin-erc4626
-description: ERC4626 tokenized vaults, shares vs assets, inflation attack mitigation, and fee patterns.
+description: ERC4626 tokenized vaults—deposit/withdraw, shares vs assets, inflation attack mitigation, fee patterns.
 ---
 
 # ERC4626
 
-Standard interface for token vaults: users deposit underlying assets and receive shares; shares are burned to withdraw assets. Use for yield-bearing tokens, lending vaults, wrappers. OpenZeppelin provides a base implementation with virtual offset to mitigate inflation attacks.
+Standard interface for token vaults: users deposit underlying assets and receive shares; redeem shares for assets. Use for lending vaults, yield aggregators, or interest-bearing tokens. OpenZeppelin provides a base implementation with virtual offset to mitigate inflation attacks.
 
 ## Usage
 
@@ -18,31 +18,33 @@ contract MyVault is ERC4626 {
 }
 ```
 
-- `deposit(assets, receiver)` / `mint(shares, receiver)`: deposit assets and get shares (or mint exact shares).
-- `withdraw(assets, receiver, owner)` / `redeem(shares, receiver, owner)`: burn shares and get assets.
-- `previewDeposit(assets)`, `previewMint(shares)`, `previewWithdraw(assets)`, `previewRedeem(shares)`: view functions that must match actual share/asset amounts (rounding down for user when appropriate). Integrators and UIs rely on these.
+- `asset()`: underlying token address. `totalAssets()` / `totalSupply()`: vault state for exchange rate.
+- `deposit(assets, receiver)` / `mint(shares, receiver)`: enter with assets or shares.
+- `withdraw(assets, receiver, owner)` / `redeem(shares, receiver, owner)`: exit.
+- `previewDeposit(assets)`, `previewMint(shares)`, `previewWithdraw(assets)`, `previewRedeem(shares)`: view-only quotes (rounding down for deposit/mint, up for withdraw/redeem); must match actual amounts.
 
 ## Inflation attack and virtual offset
 
-An attacker can donate assets to an empty vault to skew the share rate so the next depositor gets rounded to 0 shares. Defend with:
+Empty or low-liquidity vaults are vulnerable to donation-based inflation: an attacker can skew the exchange rate so the next depositor gets 0 shares. Defend with:
 
-1. **Virtual offset**: `ERC4626` uses virtual shares and virtual assets so the effective rate when the vault is empty is high (e.g. `10^offset`), making small donations unprofitable.
-2. **Decimals**: Use more decimals for shares than the asset (e.g. asset 18, shares 18+offset) so the initial rate is safer and rounding loss is bounded.
+1. **Virtual offset**: `ERC4626` uses virtual shares and virtual assets so the vault is never "empty" for pricing (e.g. `10^offset`), making small donations unprofitable.
+2. **Decimals**: Use more decimals for shares than the asset so the initial rate is safer and rounding loss is bounded.
 
-Overriding `_decimalsOffset()` (or constructor for custom vaults) sets the offset; default implementation provides protection.
+Override `_decimalsOffset()` for the virtual-offset behavior; keep the built-in offset when customizing.
 
 ## Fees
 
-Keep ERC4626 compliance: `preview*` must match actual amounts. For deposit fees: user pays `assets`, receiver gets `previewDeposit(assets)` shares; take fee from the assets before crediting shares. For withdraw fees: user burns `previewWithdraw(assets)` shares and receives `assets`; fee is added on top in share terms inside `previewWithdraw`. Emit `Deposit`/`Withdraw` with the values that reflect user-paid assets and received shares (including fees) so events describe the two exchange rates (buy-in vs exit).
+Fees must be consistent with the ERC4626 preview and event rules: **Deposit/mint**: user pays `assets` (including fee); receiver gets shares equal to `previewDeposit(assets)`; take fee from assets before crediting shares. **Withdraw/redeem**: user receives `assets` (after fee); fee is added to the share cost in `previewWithdraw`. Emit `Deposit`/`Withdraw` with values that reflect user-paid assets and received shares so events describe buy-in vs exit rates.
 
-## Key points
+## Key Points
 
-- Always use the library’s vault or extend it with minimal overrides; preserve preview accuracy.
-- First depositor / empty-vault handling is critical; virtual offset is the recommended defense.
+- Always use the library's virtual-offset logic for new vaults to avoid inflation attacks.
+- Preview functions must match actual deposit/withdraw rounding and fees; composability depends on it.
 - For fee vaults, implement fees in deposit/mint and/or withdraw/redeem while keeping previews and events consistent with the spec.
 
 <!--
 Source references:
 - sources/openzeppelin/docs/modules/ROOT/pages/erc4626.adoc
 - sources/openzeppelin/docs/modules/ROOT/pages/tokens.adoc
+- https://eips.ethereum.org/EIPS/eip-4626
 -->

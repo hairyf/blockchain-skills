@@ -1,49 +1,58 @@
 ---
 name: openzeppelin-multisig
-description: Multisig accounts with ERC-7913 signers, threshold and weighted variants.
+description: Multisig accounts with ERC-7913—SignerERC7913, MultiSignerERC7913, weighted threshold.
 ---
 
-# Multisig
+# Multisig (ERC-7913)
 
-Multi-signature accounts require multiple signers to approve operations. OpenZeppelin supports this via ERC-7913 signers: `SignerERC7913` (single signer), `MultiSignerERC7913` (threshold), and `MultiSignerERC7913Weighted` (weighted threshold). Use with the Account (ERC-4337) contract for smart account multisig.
+Multi-signature accounts require a threshold of signers to approve operations. OpenZeppelin implements this with **ERC-7913** signers: supports EOAs and non-EVM signers (e.g. P256, RSA), and threshold or weighted schemes. Use with the **Account** (ERC-4337) contract; see account-abstraction and accounts.
 
-## Single signer (ERC-7913)
+## Building blocks
 
-`SignerERC7913`: one signer represented as `bytes` = `verifier || key`. Use for keys without an EVM address (e.g. hardware). Initialize the account with `_setSigner(signer)`; expose `setSigner` with `onlyEntryPointOrSelf` so the account or entry point can rotate the key. Do not leave the account uninitialized (no public key).
+- **SignerERC7913**: one ERC-7913 signer (format `verifier || key`) controls the account. Use for keys without an EVM address (e.g. hardware). Initialize with `_setSigner(signer)`; expose `setSigner` with `onlyEntryPointOrSelf`. Do not leave the account uninitialized.
+- **MultiSignerERC7913**: multiple signers; operation valid when at least `threshold` distinct signers have signed. Initialize with `_addSigners(signers)` and `_setThreshold(threshold)`. Management: `addSigners`, `removeSigners`, `setThreshold` (guard with `onlyEntryPointOrSelf`). Query: `isSigner(signer)`, `getSigners(start, end)`, `getSignerCount()`.
+- **MultiSignerERC7913Weighted**: each signer has a weight; total weight of signing signers must ≥ threshold. Initialize with `_addSigners(signers)`, `_setSignerWeights(signers, weights)`, `_setThreshold(threshold)`. Use when signers have different authority (e.g. board votes, social recovery). `_validateReachableThreshold()` ensures sum of weights ≥ threshold.
 
-## Threshold multisig (MultiSignerERC7913)
+Multisig is implemented by composing Account + EIP712 + MultiSignerERC7913 (or Weighted) + ERC7739 + ERC7821 + token holders + Initializable.
 
-Multiple signers, fixed threshold (e.g. 2-of-3). Initialize with `_addSigners(signers)` and `_setThreshold(threshold)`. Public management: `addSigners`, `removeSigners`, `setThreshold` (guard with `onlyEntryPointOrSelf`). Contract ensures threshold is reachable (e.g. threshold ≤ number of signers). Query: `isSigner(signer)`, `getSigners(start, end)`, `getSignerCount()`.
+## Setup (Threshold)
 
-## Weighted multisig (MultiSignerERC7913Weighted)
+```solidity
+function initialize(bytes[] memory signers, uint256 threshold) public initializer {
+    _addSigners(signers);
+    _setThreshold(threshold);
+}
+```
 
-Like `MultiSignerERC7913` but each signer has a weight; total weight of signing participants must meet or exceed the threshold. Initialize with `_addSigners(signers)`, `_setSignerWeights(signers, weights)`, `_setThreshold(threshold)`. Use when signers have different authority (e.g. board votes, social recovery). Threshold scale must match weights (e.g. weights 1,2,3 → threshold 4 means at least two signers). `_validateReachableThreshold()` ensures sum of weights ≥ threshold.
+- `signers`: array of `bytes` (e.g. EOA address, or `verifier || key` for P256/RSA). Threshold must be ≤ number of signers.
+
+## Setup (Weighted)
+
+```solidity
+function initialize(bytes[] memory signers, uint256[] memory weights, uint256 threshold) public initializer {
+    _addSigners(signers);
+    _setSignerWeights(signers, weights);
+    _setThreshold(threshold);
+}
+```
+
+Weights and threshold must use the same scale (e.g. weights 1,2,3 and threshold 4 means at least two signers).
 
 ## Signature format
 
-Multisig signature is `abi.encode(signers[], signatures[])`. `signers` must be sorted ascending by `keccak256(signer)`; `signatures` in the same order. Each signer uses ERC-7913 format (verifier + key); each signature is the signer’s own signature.
+Multisig payload: `abi.encode(bytes[] signers, bytes[] signatures)`. Signers array must be sorted by `keccak256(signer)` ascending; signatures in the same order. Each signer uses ERC-7913 format (verifier + key).
 
-## Setup example (threshold)
+Example (threshold): `signers[0] = ecdsaSigner; signers[1] = abi.encodePacked(p256Verifier, pubKeyX, pubKeyY); ... account.initialize(signers, threshold);`. For weighted: `initialize(signers, weights, threshold)` and ensure threshold is achievable from the sum of weights.
 
-```solidity
-bytes[] memory signers = new bytes[](3);
-signers[0] = ecdsaSigner;  // e.g. 20-byte EOA
-signers[1] = abi.encodePacked(p256Verifier, pubKeyX, pubKeyY);
-signers[2] = abi.encodePacked(rsaVerifier, abi.encode(rsaE, rsaN));
-uint256 threshold = 2;
-account.initialize(signers, threshold);
-```
+## Key Points
 
-For weighted: `initialize(signers, weights, threshold)` and ensure threshold is achievable from the sum of weights.
-
-## Key points
-
-- Standard EIP-1271 assumes a single identity; ERC-7913 allows multiple signers and threshold/weighted rules.
-- Use with `Account` + EIP712 + ERC7739 + ERC7821 (and token holders if the account holds NFTs/ERC1155). Restrict signer management to `onlyEntryPointOrSelf`.
-- Any custom logic on top of multisigner contracts must keep the threshold reachable (e.g. after removing signers).
+- Use MultiSignerERC7913 for equal-weight multisig; use Weighted when signers have different power.
+- Restrict signer management to `onlyEntryPointOrSelf` to avoid lockout. Any custom logic must keep the threshold reachable (e.g. after removing signers).
+- EIP-1271 assumes a single identity; ERC-7913 allows multiple signers and threshold/weighted rules.
 
 <!--
 Source references:
 - sources/openzeppelin/docs/modules/ROOT/pages/multisig.adoc
 - sources/openzeppelin/docs/modules/ROOT/pages/accounts.adoc
+- EIP-7913
 -->

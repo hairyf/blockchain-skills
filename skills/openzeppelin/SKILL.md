@@ -23,6 +23,7 @@ OpenZeppelin Contracts is a library for secure smart contract development on EVM
 | ERC1155 | Multi-token (fungible + NFT), batch ops, safe transfer to contracts | [core-erc1155](references/core-erc1155.md) |
 | ERC4626 | Tokenized vaults, shares vs assets, inflation attack mitigation | [core-erc4626](references/core-erc4626.md) |
 | ERC6909 | Multi-asset (no batch/callbacks), granular approvals, extensions | [core-erc6909](references/core-erc6909.md) |
+| Extending Contracts | Inheritance, overrides, super, security when customizing | [core-extending-contracts](references/core-extending-contracts.md) |
 | ERC20 Supply | Creating supply with _mint and _update, fixed and reward patterns | [core-erc20-supply](references/core-erc20-supply.md) |
 
 ## Features
@@ -48,11 +49,15 @@ OpenZeppelin Contracts is a library for secure smart contract development on EVM
 | Topic | Description | Reference |
 |-------|-------------|-----------|
 | Utilities | ECDSA, MerkleProof, Math, ERC165, structures, StorageSlot, Multicall | [features-utilities](references/features-utilities.md) |
+| ERC20 Supply | _mint, _update, fixed supply, custom mint triggers | [features-erc20-supply](references/features-erc20-supply.md) |
+| ERC2981 Royalties | NFT royalty signaling, default and per-token | [features-erc2981](references/features-erc2981.md) |
+| Permit (EIP-2612) | Gasless ERC20 approval via signature, Nonces | [features-permit](references/features-permit.md) |
 
 ## Best Practices
 
 | Topic | Description | Reference |
 |-------|-------------|-----------|
 | Backwards Compatibility | Semantic versioning, storage layout, safe overrides | [best-practices-backwards-compatibility](references/best-practices-backwards-compatibility.md) |
+| Security Patterns | ReentrancyGuard, Pausable, transient guard | [best-practices-security-patterns](references/best-practices-security-patterns.md) |
 | Extending Contracts | Inheritance, overrides, super, security when customizing | [best-practices-extending-contracts](references/best-practices-extending-contracts.md) |
 | EOA Restriction | Why not to restrict to EOAs only; use access control instead | [best-practices-eoa-restriction](references/best-practices-eoa-restriction.md) |

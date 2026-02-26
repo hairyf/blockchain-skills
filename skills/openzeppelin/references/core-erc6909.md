@@ -1,11 +1,11 @@
 ---
 name: openzeppelin-erc6909
-description: ERC-6909 multi-asset token standard, no batch/callbacks, granular approvals.
+description: ERC-6909 multi-asset standard—per-id balances, no batching or callbacks, granular approvals, extensions.
 ---
 
 # ERC6909
 
-Multi-asset standard aimed at lower gas and simpler design than ERC-1155: one contract, multiple token ids, no batch operations and no transfer callbacks. Use when you need multiple token types in one contract and don’t need ERC-1155’s batch or safe-transfer semantics.
+Multi-asset standard evolved from ERC-1155: one contract, many token ids, lower gas and simpler design. No batch operations, no transfer callbacks; approvals can be global (operators) or per-id amounts (ERC-20 style). Use when you need multiple token types in one contract and don't need ERC-1155's batch or safe-transfer semantics.
 
 ## Differences from ERC-1155
 
@@ -22,25 +22,27 @@ import { ERC6909Metadata } from "@openzeppelin/contracts/token/ERC6909/extension
 contract GameItems is ERC6909, ERC6909Metadata {
     constructor() ERC6909Metadata("Game Items", "GIT") {
         _mint(msg.sender, 0, 10000);  // id 0: fungible
-        _mint(msg.sender, 1, 1);       // id 1: NFT
+        _mint(msg.sender, 1, 1);      // id 1: NFT
     }
 }
 ```
 
-- **ERC6909**: base balance and transfer; internal `_mint(account, id, amount)`.
+- **ERC6909**: base balance and transfer; internal `_mint(account, id, amount)`, `_burn(account, id, amount)`. Add access control as needed.
 - **ERC6909Metadata**: optional `name`, `symbol`, and `decimals(id)` (per-id decimals for fungible ids).
 - **ERC6909ContentURI**: optional `contentURI(id)` for metadata.
-- **ERC6909TokenSupply**: optional total supply per id (`totalSupply(id)`).
+- **ERC6909TokenSupply**: optional total supply per id (`totalSupply(id)`). Base implementation does not track total supply.
 
-Base implementation does not track total supply; use `ERC6909TokenSupply` if needed. No content URI in base; add `ERC6909ContentURI` for metadata by id.
+Mint: `_mint(account, id, amount)`; approve per (owner, id, spender); use `transferFrom(from, to, id, amount)`.
 
-## Key points
+## Key Points
 
-- Prefer ERC-6909 when you want a single contract for many ids and can give up batching and receiver callbacks for gas and simplicity.
+- Prefer ERC-6909 when you don't need batching or receiver callbacks and want lower gas and simpler integration.
 - Use `ERC6909Metadata` for decimals per id; use `ERC6909ContentURI` for off-chain or on-chain metadata by id.
+- No safe-transfer requirement: sending to contracts does not require receiver interface.
 
 <!--
 Source references:
 - sources/openzeppelin/docs/modules/ROOT/pages/erc6909.adoc
 - sources/openzeppelin/docs/modules/ROOT/pages/tokens.adoc
+- EIP-6909 (draft)
 -->
