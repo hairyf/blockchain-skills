@@ -184,3 +184,24 @@
 [submodule "sources/ton-tact"]
 	path = sources/ton-tact
 	url = https://github.com/tact-lang/tact
+[submodule "sources/tronweb"]
+	path = sources/tronweb
+	url = https://github.com/tronprotocol/tronweb
+[submodule "sources/tronbox"]
+	path = sources/tronbox
+	url = https://github.com/tronprotocol/tronbox
+[submodule "sources/ton-blueprint"]
+	path = sources/ton-blueprint
+	url = https://github.com/ton-org/blueprint
+[submodule "sources/ton-http"]
+	path = sources/ton-http
+	url = https://github.com/toncenter/ton-http-api
+[submodule "sources/tonweb"]
+	path = sources/tonweb
+	url = https://github.com/toncenter/tonweb
+[submodule "sources/hardhat-tron"]
+	path = sources/hardhat-tron
+	url = https://github.com/aziz1975/layerzero-hardhat-tron
+[submodule "sources/solana-kit"]
+	path = sources/solana-kit
+	url = https://github.com/anza-xyz/kit.git

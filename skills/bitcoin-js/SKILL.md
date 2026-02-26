@@ -2,7 +2,7 @@
 name: bitcoin-js
 description: JavaScript/TypeScript Bitcoin library — payments, addresses, PSBT, transactions, script.
 metadata:
-  author: Anthony Fu
+  author: Hairy
   version: "2026.2.9"
   source: Generated from https://github.com/bitcoinjs/bitcoinjs-lib
 ---

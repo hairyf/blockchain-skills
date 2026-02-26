@@ -12,13 +12,19 @@ export const submodules = {
   'solidity': 'https://github.com/ethereum/solidity',
 
   'solana': 'https://github.com/solana-foundation/solana-com',
+  'solana-kit': 'https://github.com/anza-xyz/kit.git',
   'solana-anchor': 'https://github.com/solana-foundation/anchor',
 
   'tron': 'https://github.com/tronprotocol/documentation-en',
   'tron-java': 'https://github.com/tronprotocol/java-tron',
+  'tronweb': 'https://github.com/tronprotocol/tronweb',
+  'tronbox': 'https://github.com/tronprotocol/tronbox',
 
   'ton': 'https://github.com/ton-org/docs',
   'ton-tact': 'https://github.com/tact-lang/tact',
+  'ton-blueprint': 'https://github.com/ton-org/blueprint',
+  'ton-http': 'https://github.com/toncenter/ton-http-api',
+  'tonweb': 'https://github.com/toncenter/tonweb',
 
   'geth': 'https://github.com/ethereum/go-ethereum',
   'reth': 'https://github.com/paradigmxyz/reth',
@@ -106,7 +112,10 @@ export const vendors: Record<string, VendorSkillMeta> = {
 }
 
 /**
- * Hand-written skills with Anthony Fu's preferences/tastes/recommendations
+ * Manual-initialized skills: no GitHub repo; docs are fetched to .bonfire/cache/<name>
+ * and skills generated from cache. Add the skill name here when user says "初始化 <name>".
+ * See .bonfire/specs/manual-skill-initialization.md for the full workflow.
  */
 export const manual = [
+  'straitsx',
 ]

@@ -4,3 +4,4 @@
 - **Git SHA:** `79caafe2c6d16b3d5820963a803eb42672b16339`
 - **Generated:** 2026-02-09
 - **Wagmi version:** 3.4.2 (packages/react)
+- **Supplemented (more):** 2026-02-25 — core-transports, react-send-transaction, react-ens, react-sign-message, react-chain-network; best-practices-error-handling, features-ssr, react-block-balance, core-storage, react-reconnect

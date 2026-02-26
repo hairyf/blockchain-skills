@@ -33,6 +33,19 @@ viem is a TypeScript client for Ethereum: Public/Wallet/Test clients, transports
 | Topic | Description | Reference |
 |-------|-------------|-----------|
 | Utilities | getAddress, parseEther/formatEther, encoding, keccak256, ABI helpers | [features-utilities](references/features-utilities.md) |
+| ABI | parseAbi, encodeAbiParameters, decodeAbiParameters, getAbiItem | [features-abi](references/features-abi.md) |
+
+### Auth
+
+| Topic | Description | Reference |
+|-------|-------------|-----------|
+| SIWE | createSiweMessage, verifySiweMessage, parseSiweMessage, validateSiweMessage | [features-siwe](references/features-siwe.md) |
+
+### Public data
+
+| Topic | Description | Reference |
+|-------|-------------|-----------|
+| Public Actions | getBalance, getLogs, getBlock, estimateGas, waitForTransactionReceipt, watchEvent | [features-public-actions](references/features-public-actions.md) |
 
 ## Best Practices
 

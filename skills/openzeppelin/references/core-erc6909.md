@@ -1,19 +1,19 @@
 ---
 name: openzeppelin-erc6909
-description: ERC6909 multi-token standard—per-id balances, no batching or callbacks, granular approvals.
+description: ERC-6909 multi-asset standard—per-id balances, no batching or callbacks, granular approvals, extensions.
 ---
 
 # ERC6909
 
-Multi-token standard evolved from ERC1155: same idea (one contract, many token ids) with lower gas and simpler design. No batch operations, no transfer callbacks; approvals can be global (operators) or per-id amounts (ERC20-style).
+Multi-asset standard evolved from ERC-1155: one contract, many token ids, lower gas and simpler design. No batch operations, no transfer callbacks; approvals can be global (operators) or per-id amounts (ERC-20 style). Use when you need multiple token types in one contract and don't need ERC-1155's batch or safe-transfer semantics.
 
-## Differences from ERC1155
+## Differences from ERC-1155
 
-- No batch functions: use single `transfer(to, id, amount)` and repeated calls if needed.
-- No receiver callbacks: tokens can be sent to any address (including contracts) without `onERC1155Received`.
-- Approvals: set operators (global) or approve per (owner, id, spender) with amount.
+- **No batch ops**: Only single-id `balanceOf(account, id)` and `transfer(to, id, amount)` (and operator `transferFrom`). No `balanceOfBatch` or `safeBatchTransferFrom`.
+- **No callbacks**: Transfers to contracts do not require `onERC1155Received`; tokens can be sent to any address.
+- **Approvals**: Operator approvals can be global (all ids) or per-id amounts (ERC-20 style).
 
-## Construction
+## Usage
 
 ```solidity
 import { ERC6909 } from "@openzeppelin/contracts/token/ERC6909/ERC6909.sol";
@@ -21,30 +21,28 @@ import { ERC6909Metadata } from "@openzeppelin/contracts/token/ERC6909/extension
 
 contract GameItems is ERC6909, ERC6909Metadata {
     constructor() ERC6909Metadata("Game Items", "GIT") {
-        _mint(msg.sender, 0, 1000);  // Gold
-        _mint(msg.sender, 2, 1);     // NFT
+        _mint(msg.sender, 0, 10000);  // id 0: fungible
+        _mint(msg.sender, 1, 1);      // id 1: NFT
     }
 }
 ```
 
-- Base `ERC6909` has no decimals or metadata. Use `ERC6909Metadata` for name/symbol and optional decimals per id.
-- `ERC6909TokenSupply` extension tracks total supply per id.
-- `ERC6909ContentURI` adds content URI per id.
+- **ERC6909**: base balance and transfer; internal `_mint(account, id, amount)`, `_burn(account, id, amount)`. Add access control as needed.
+- **ERC6909Metadata**: optional `name`, `symbol`, and `decimals(id)` (per-id decimals for fungible ids).
+- **ERC6909ContentURI**: optional `contentURI(id)` for metadata.
+- **ERC6909TokenSupply**: optional total supply per id (`totalSupply(id)`). Base implementation does not track total supply.
 
-## Usage
-
-- `balanceOf(account, id)` / `transfer(to, id, amount)`.
-- Mint: `_mint(account, id, amount)`; burn: `_burn(account, id, amount)`. Add access control as needed.
-- Approve per (owner, id, spender): set allowance; use `transferFrom(from, to, id, amount)`.
+Mint: `_mint(account, id, amount)`; approve per (owner, id, spender); use `transferFrom(from, to, id, amount)`.
 
 ## Key Points
 
-- Prefer ERC6909 when you don’t need batching or receiver callbacks and want lower gas and simpler integration.
-- Use extensions for metadata, decimals, total supply, or content URI.
+- Prefer ERC-6909 when you don't need batching or receiver callbacks and want lower gas and simpler integration.
+- Use `ERC6909Metadata` for decimals per id; use `ERC6909ContentURI` for off-chain or on-chain metadata by id.
 - No safe-transfer requirement: sending to contracts does not require receiver interface.
 
 <!--
 Source references:
 - sources/openzeppelin/docs/modules/ROOT/pages/erc6909.adoc
+- sources/openzeppelin/docs/modules/ROOT/pages/tokens.adoc
 - EIP-6909 (draft)
 -->
